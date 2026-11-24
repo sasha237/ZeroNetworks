@@ -1,0 +1,21 @@
+{
+  "name": "zero-networks",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc -p packages/engine/tsconfig.json && tsc -p packages/client/tsconfig.json",
+    "build": "tsc -p packages/engine/tsconfig.build.json && npm --workspace @zero-networks/client run build",
+    "dev": "npm --workspace @zero-networks/client run dev",
+    "preview": "npm --workspace @zero-networks/client run preview"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.12"
+  }
+}
